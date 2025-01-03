@@ -1,0 +1,16 @@
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\bin\Debug\net5.0\BlazorStore.Model.deps.json
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\bin\Debug\net5.0\BlazorStore.Model.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\bin\Debug\net5.0\BlazorStore.Model.pdb
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\bin\Debug\net5.0\BlazorStore.Shared.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\bin\Debug\net5.0\BlazorStore.Shared.pdb
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.csproj.AssemblyReference.cache
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.AssemblyInfoInputs.cache
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.AssemblyInfo.cs
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.csproj.CoreCompileInputs.cache
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.sourcelink.json
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorSt.76E697F0.Up2Date
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\refint\BlazorStore.Model.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\BlazorStore.Model.pdb
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Model\obj\Debug\net5.0\ref\BlazorStore.Model.dll

@@ -1,0 +1,12 @@
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\bin\Debug\net5.0\BlazorStore.Shared.deps.json
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\bin\Debug\net5.0\BlazorStore.Shared.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\bin\Debug\net5.0\BlazorStore.Shared.pdb
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.AssemblyInfoInputs.cache
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.AssemblyInfo.cs
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.csproj.CoreCompileInputs.cache
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.sourcelink.json
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\refint\BlazorStore.Shared.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\BlazorStore.Shared.pdb
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore.Shared\obj\Debug\net5.0\ref\BlazorStore.Shared.dll
