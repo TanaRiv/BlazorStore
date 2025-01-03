@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "orpG2CTaA2w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hobdu\\Repositorios\\BlazorStore\\BlazorStore.Shared\\BlazorStore.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hobdu\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
