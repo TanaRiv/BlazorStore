@@ -1,0 +1,144 @@
+﻿@page "/catalog"
+@inject ICatalogServices CatalogServices
+@inject ICategoryServices CategoryServices
+@inject AutoMapper.IMapper _mapper
+@inject NavigationManager NavigationManager
+
+<h3>Catalog Page</h3>
+
+<div class="container my-4">
+    <div class="row">
+
+        <!-- barra lateral de filtros-->
+        <div class="col-3 border">
+            <h5 class="mb-3">Filtros</h5>
+
+            <div class="mb3">
+                <label for="searchText" class="col-form-label">Busqueda</label>
+                <input id="searchText" class="form-control"
+                       placeholder="Ingrese Texto..."
+                       @bind-value="searchTerm"
+                       @bind-value:event="onInput"
+                       onkeypress="HandleKeyPress" />
+
+            </div>
+
+            <div class="mb-3">
+                <label for="categorySelect" class="form-label">Categoría</label>
+                <select id="categorySelect" class="form-control"
+                    @bind="selectedCategoryId">
+                    <option>All categories</option>
+                    @if (categories != null)
+                    {
+                        foreach(var item in categories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="minPrice" class="col-form-label">Precio mínimo</label>
+                <input id="minPrice" type="range" class="form-control"
+                       min="0" max="1000" step="10"
+                       @bind-value="minPriceValue" />
+                <div class="text-muted">
+                    <small>@($"Min: {minPriceValue}")</small>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="maxPrice" class="col-form-label"> Precio máximo</label>
+                <input id="maxPrice" type="range" class="form-control"
+                       min="0" max="1000" step="10"
+                       @bind-value="minPriceValue" />
+                <div class="text-muted">
+                    <small>@($"Max: {maxPriceValue}")</small>
+                </div>
+            </div>
+            <button class="btn btn-primary w-100" @onclick="FilterProducts">Filtrar</button>
+
+
+        </div>
+
+        <!-- Área de productos -->
+        <div class="col-9">
+            <div class="d-flex justify-content-between align-items-center mb_3">
+                <h2>Catálogo</h2>
+              
+            </div>
+
+            <div class="row">
+                @if (products == null)
+                {
+                    <div class="col-12">
+                        <p>No products found</p>
+                    </div>
+                }
+                else
+                {
+                    @foreach (Product item in products)
+                    {
+                        <div class="col-md-4  mb-4">
+                            <div class="card">
+                                <img src="/images/@item.Image" class="card-img-top" alt="@item.Name" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.Name</h5>
+                                    <p class="card-text">@item.Description</p>
+                                    <button class="btn btn-sm btn-outline-primary" @onclick="()=>NavigateToProduct(item.Id,item.Name)"> Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string searchTerm = "";
+    private string selectedCategory = "";
+    private int? selectedCategoryId;
+    private int minPriceValue = 0;
+    private int maxPriceValue = 1000;
+    private List<Product> products;
+    private List<Category> categories;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await SearchCategories();
+        await SearchProducts();
+    }
+
+    private async Task SearchCategories()
+    {
+        var categoriesDtos = await CategoryServices.GetAllAsync();
+        categories = _mapper.Map<List<Category>>(categoriesDtos);
+    }
+    private void NavigateToProduct(int id, string name)
+    {
+        NavigationManager.NavigateTo($"/catalog/product/{id}/{name}");
+    }
+
+    private async Task SearchProducts()
+    {
+        var criteria = new SearchCriteria
+            {
+                Term = searchTerm,
+                CategoryId = selectedCategoryId.HasValue ? selectedCategoryId : null,
+                MinPrice = minPriceValue,
+                MaxPrice = maxPriceValue,
+                CategoryName = string.IsNullOrEmpty(selectedCategory) ? null : selectedCategory
+            };
+
+        var productsDtos = await CatalogServices.SearchAsync(criteria);
+        products = _mapper.Map<List<Product>>(productsDtos);
+
+    }
+    private async Task FilterProducts(MouseEventArgs e)
+    {
+        await SearchProducts();
+    }
+}

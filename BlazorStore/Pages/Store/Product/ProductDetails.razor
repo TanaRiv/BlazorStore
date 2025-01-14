@@ -1,0 +1,59 @@
+﻿@page "/catalog/product/{id:int}/{name?}"
+@inject ICatalogServices CatalogService
+@inject IProductServices ProductService
+@inject AutoMapper.IMapper _Mapper
+
+
+
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="/images/@product.Image" alt="@product.Name" class="img-fluid border" />
+        </div>
+
+        <div class="col-md-7">
+            <h2>@product.Name</h2>
+            <p>@product.Description</p>
+            @if (product.PrevPrice > product.Price)
+            {
+                <span class="badge bg-danger">SALE! -> </span>
+                <del class="text-muted me-2">@($"{product.PrevPrice:C} ")</del>
+            }
+
+            <span class="text-success">@($"{product.Price}")</span>
+
+            <div class="mt-4">
+                <div class="d-flex align-content-center">
+                    <label for="quantity" class="col-form-label me-2 mb-0">Quantity:</label>
+                    <input id="quantity" type="number" min="1" max="100" class="form-control w-auto"
+                           @bind-value="quantity" />
+                </div>
+                
+            </div>
+
+            <button class="btn btn-primary mt-3" @onclick="AddToCart">Add to Cart</button>
+        </div>        
+    </div>
+</div>
+
+@code {
+    [Parameter] public int id { get; set; }
+    [Parameter] public string name { get; set; }
+    private Product product; 
+    private int quantity = 1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var productDto = await ProductService.GetByIdAsync(id);
+        product = _Mapper.Map<Product>(productDto);
+        if (product == null)
+        {
+            throw new Exception("Product not found");
+        }
+    }
+    private async Task AddToCart()
+    {
+        // Lógica para agregar el producto al carrito
+        // await CartService.AddToCartAsync(product, quantity);
+    }
+}

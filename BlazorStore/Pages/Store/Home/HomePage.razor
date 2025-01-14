@@ -1,7 +1,82 @@
 ﻿@page "/"
+@inject ICatalogServices CatalogServices
+@inject ICategoryServices CategoriesServices
+@inject NavigationManager NavigationManager
+@inject AutoMapper.IMapper _mapper
 
-<h2 class="featured-title">
-    Welcome to BlazorStore!
-</h2>
-<p class="text-center">It's your turn: <b>develop an awesome store!</b></p>
+
+<div class="container-fluid  my-4">
+    <div id="categoryCarousel" class="carousel mb-5" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var category in categories)
+            {
+                <div class="carousel-item @(category == categories.FirstOrDefault()? "active":"")">
+                    <img src="@category.Image" class="d-block w-100" alt="@category.Name" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>@category.Name</h5>
+                        <button class="btn btn-primary" @onclick="()=> NavigateToCategory(category.Id)">
+                            Explore @category.Name
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+        <a class="carousel-control-prev" href="#categoryCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#categoryCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <h2>Featured products</h2>
+    <div class="row">
+        @foreach (var product in featuredProducts)
+        {
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="card-img-container">
+                        <img src="/images/@product.Image" class="card-img-top" alt="@product.Name" @onclick="()=> NavigateToProduct(product.Id,product.Name)" />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@product.Name</h5>
+                        <p class="card-text">@product.Description</p>
+                        <div class=" d-flex justify-content-between">
+                            <button class="btn btn-primary btn-sm" onclick="()=>AddToCard(@product.Id)">
+                                Add to Card
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<Category> categories = new();
+    private List<Product> featuredProducts = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var categoriesDto = await CategoriesServices.GetAllAsync();
+        categories = _mapper.Map<List<Category>>(categoriesDto);
+
+        var featuredProductsDto = await CatalogServices.GetHighlightedProductsAsync(3);
+        featuredProducts = _mapper.Map<List<Product>>(featuredProductsDto);
+
+    }
+
+    private void NavigateToCategory(int categoryId)
+    {
+        NavigationManager.NavigateTo($"/catalog?selectedCategoryId={categoryId}");
+    }
+    private void NavigateToProduct(int productId, string productName)
+    {
+        NavigationManager.NavigateTo($"/catalog/product/{productId}/{productName}");
+    }
+}
 

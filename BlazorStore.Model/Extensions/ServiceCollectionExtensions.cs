@@ -2,6 +2,7 @@
 using AutoMapper;
 using BlazorStore.Model.Data;
 using BlazorStore.Model.Mapping;
+using BlazorStore.Model.Services.Cart;
 using BlazorStore.Model.Services.Catalog;
 using BlazorStore.Model.Services.Categories;
 using BlazorStore.Model.Services.Orders;
@@ -20,6 +21,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ICatalogServices, CatalogServices>();
             services.AddScoped<IOrderServices, OrderServices>();
             services.AddScoped<IUserServices, UserServices>();
+            services.AddScoped<ICartService, CartService>();
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
             return services;
         } 

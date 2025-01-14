@@ -14,6 +14,7 @@ namespace BlazorStore.Model.Mapping
             CreateMap<Product, ProductDto>();
             CreateMap<ProductDto, Product>();
             CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
             CreateMap<Order, ExistingOrderDto>()
                 .ForMember(o => o.Status, opt => opt.MapFrom(m => m.Status.ToString()));
             CreateMap<NewOrderDto, Order>();

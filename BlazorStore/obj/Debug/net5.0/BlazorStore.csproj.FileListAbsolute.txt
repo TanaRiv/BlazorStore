@@ -79,3 +79,17 @@ C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\refint\Blaz
 C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\BlazorStore.pdb
 C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\BlazorStore.genruntimeconfig.cache
 C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\ref\BlazorStore.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\RazorDeclaration\Pages\Store\Catalog\Catalog.razor.g.cs
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\Razor\Pages\Store\Catalog\Catalog.razor.g.cs
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\RazorDeclaration\Pages\Store\Product\ProductDetails.razor.g.cs
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\obj\Debug\net5.0\Razor\Pages\Store\Product\ProductDetails.razor.g.cs
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.AspNetCore.Components.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.JSInterop.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\bin\Debug\net5.0\System.IO.Pipelines.dll

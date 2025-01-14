@@ -158,6 +158,107 @@ using BlazorStore.Model.Services.Users
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 59 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+       
+    private List<Category> categories = new();
+    private List<Product> featuredProducts = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var categoriesDto = await CategoriesServices.GetAllAsync();
+        categories = _mapper.Map<List<Category>>(categoriesDto);
+
+        var featuredProductsDto = await CatalogServices.GetHighlightedProductsAsync(3);
+        featuredProducts = _mapper.Map<List<Product>>(featuredProductsDto);
+
+    }
+
+    private void NavigateToCategory(int categoryId)
+    {
+        NavigationManager.NavigateTo($"/catalog?selectedCategoryId={categoryId}");
+    }
+    private void NavigateToProduct(int productId, string productName)
+    {
+        NavigationManager.NavigateTo($"/catalog/product/{productId}/{productName}");
+    }
+
+#line default
+#line hidden
+#nullable disable
+
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
+#nullable restore
+#line 5 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+        AutoMapper.IMapper
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 5 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+                           _mapper
+
+#line default
+#line hidden
+#nullable disable
+         { get; set; }
+         = default!;
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
+#nullable restore
+#line 4 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+        NavigationManager
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 4 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+                          NavigationManager
+
+#line default
+#line hidden
+#nullable disable
+         { get; set; }
+         = default!;
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
+#nullable restore
+#line 3 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+        ICategoryServices
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 3 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+                          CategoriesServices
+
+#line default
+#line hidden
+#nullable disable
+         { get; set; }
+         = default!;
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
+#nullable restore
+#line 2 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+        ICatalogServices
+
+#line default
+#line hidden
+#nullable disable
+         
+#nullable restore
+#line 2 "C:\Users\hobdu\Repositorios\BlazorStore\BlazorStore\Pages\Store\Home\HomePage.razor"
+                         CatalogServices
+
+#line default
+#line hidden
+#nullable disable
+         { get; set; }
+         = default!;
     }
 }
 #pragma warning restore 1591

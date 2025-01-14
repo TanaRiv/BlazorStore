@@ -19,6 +19,31 @@ a {
     z-index: 10000;
 }
 
+.card-img-container {
+    height: 200px; /* Define la altura fija de las imágenes */
+    overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img-top {
+    object-fit: cover; /* Asegura que las imágenes se ajusten al contenedor sin deformarse */
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    height: 100%; /* Ocupa la altura definida en el contenedor */
+}
+
+.card {
+    height: 60%; /* Hace que todas las tarjetas tengan la misma altura */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantiene los botones en la parte inferior */
+    height: 100%;
+}
+
 /* Encabezados */
 
 h1, h2, h3, h4, h5 {
@@ -258,21 +283,27 @@ h1, h2 {
         padding: 1rem 2rem;
     }
 
-    #carousel a {
-        color: white;
-        text-decoration: none;
-        text-shadow: 1px 1px 2px black;
+.carousel-inner img {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho */
+    height: 75vh; /* Hace que las imágenes ocupen toda la altura de la pantalla */
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+}
+
+#carousel a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+}
+
+    #carousel a.carousel-cta {
+        background-color: rgb(92 45 145 / 50%);
+        border: 5px solid transparent;
+        padding: 0.5rem 1rem;
     }
 
-        #carousel a.carousel-cta {
-            background-color: rgb(92 45 145 / 50%);
-            border: 5px solid transparent;
-            padding: 0.5rem 1rem;
+        #carousel a.carousel-cta:hover {
+            background-color: #5C2D91;
         }
-
-            #carousel a.carousel-cta:hover {
-                background-color: #5C2D91;
-            }
 
 /* / Carrusel */
 
@@ -336,6 +367,14 @@ div.footer {
     grid-gap: 25px;
     grid-row-gap: 50px;
 }
+    .product-list .card-text {
+        color: #777;
+        font-size: 14px; /* Ajusta el tamaño del texto */
+        margin-top: 10px;
+        overflow: hidden; /* Evita que las descripciones largas desborden */
+        height: 60px; /* Espacio fijo para las descripciones */
+        text-overflow: ellipsis;
+    }
 
     .product-list .product {
         border: 5px solid #f1f2f3;
